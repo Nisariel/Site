@@ -119,14 +119,17 @@ function casseBrique(){
 
 	function drawMessage(message){
 		ctx.clearRect(0, 0, canvas.width, canvas.height);
-		ctx.font = "16px Arial";
-        ctx.fillStyle = '#0095DD';
-        ctx.fillText(message, canvas.width-150, 100);
+		ctx.font = "30px Arial";
+	    ctx.fillStyle = '#0095DD';
+		ctx.fillText(message, 200, 160); 
 	}
 
 	function draw() {
 	  if (lives == 0){
 	  	exit;
+	  }
+	  if (score == brickRowCount*brickColumnCount){
+	  	drawMessage("You win");
 	  }
 	  ctx.clearRect(0, 0, canvas.width, canvas.height);
 	  drawBricks();
@@ -175,3 +178,9 @@ function casseBrique(){
 
 	draw();	
 }
+
+function getRandomInt() {
+  return Math.floor(Math.random() * Math.floor(10));
+}
+
+
